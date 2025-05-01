@@ -1,0 +1,33 @@
+{
+  "name": "extractor",
+  "version": "1.0.0",
+  "description": "Frontend extractor and reverse engineering tool",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.7.0",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "css": "^3.0.0",
+    "express": "^5.1.0",
+    "glob": "^11.0.1",
+    "node-fetch": "^2",
+    "playwright": "^1.51.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/css": "^0.0.38",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.30",
+    "@types/node-fetch": "^2.6.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

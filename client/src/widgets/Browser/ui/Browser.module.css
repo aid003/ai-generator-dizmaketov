@@ -1,0 +1,123 @@
+.wrapper {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.browserContainer {
+  width: 95%;
+  margin: auto;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: white;
+  overflow: hidden;
+  border: 1px solid gray;
+}
+
+.iframeScaledWrapper {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: auto;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.tooltip {
+  position: absolute;
+  top: 1rem;
+  max-width: 30rem;
+  overflow: auto;
+  background-color: #1e1e1e;
+  color: #eee;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 1px solid #333;
+}
+
+.topPanel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.clearButton {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.clearButton:hover {
+  background-color: #c9302c;
+}
+
+.loaderOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  color: #333;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #999;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.toggleScriptButton {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.toggleScriptButton:hover {
+  background-color: #31b0d5;
+}

@@ -1,0 +1,25 @@
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  background-image: url("/blur.webp");
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.chatMainContainer {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  background-image: url("/blur.webp");
+  background-position: top center;
+  background-repeat: no-repeat;
+}

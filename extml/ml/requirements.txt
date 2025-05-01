@@ -1,0 +1,10 @@
+bs4
+dotenv
+fastapi
+python-socketio
+uvicorn
+openai
+pydantic
+langgraph
+groq
+ollama

@@ -1,0 +1,68 @@
+
+services:
+  # 🧠 LLM-сервер Ollama
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - internal
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # 🚀 Сервис для автоскачивания модели
+  ollama-puller:
+    image: curlimages/curl:latest
+    depends_on:
+      - ollama
+    networks:
+      - internal
+    entrypoint: >
+      sh -c "
+        echo 'Ждём запуска ollama...' &&
+        sleep 10 &&
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\":\"qwen2.5-coder:7b\"}' &&
+        echo 'Модель загружена.'"
+
+  # 🛠️ Python-бекенд extml
+  extml:
+    build:
+      context: ./extml
+    ports:
+      - "5500:5500"
+      - "5550:5550"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on:
+      - ollama-puller
+    networks:
+      - internal
+    restart: unless-stopped
+
+  # 🌐 Фронтенд client
+  client:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - EXTRACTOR_URL=http://extml:5500
+      - PYTHON_API_URL=http://extml:5550
+    depends_on:
+      - extml
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  ollama_data:

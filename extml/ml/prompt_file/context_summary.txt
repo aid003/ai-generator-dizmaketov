@@ -1,0 +1,14 @@
+=== Найденный блок ===
+<p style="text-align: left; color: green;">Покрытие МДФ</p>
+
+=== Родительская структура ===
+<div class="t-name t-name_lg" field="title5" style="padding-top:10px;padding-bottom:1px;"><p style="text-align: left; color: green;">Покрытие МДФ</p></div>
+
+=== CSS (если найдено) ===
+—
+
+=== JS (если найдено) ===
+—
+
+=== Найдено в файле ===
+D:\1 My Work\2 ML\Workes\hack\ai-generator-dizmaketov\extml\extractor\output\do-doors.ru\index.html

@@ -1,0 +1,57 @@
+.inputContainer {
+  width: 100%;
+  height: 17%;
+  position: relative;
+
+  flex-direction: column;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: inherit;
+}
+
+.input {
+  width: 95%;
+  border-radius: 10px;
+  height: 4.2rem;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 3rem;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.sendButton {
+  position: absolute;
+  top: 57%;
+  right: 4%;
+  transform: translateY(-50%);
+
+  height: 2.2rem;
+  padding: 10px 10px;
+  font-size: 14px;
+  text-align: center;
+
+  border-radius: 50%;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+
+  z-index: 1;
+}
+
+.label {
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(63, 63, 70);
+  color: azure;
+}
+
+.label > p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
